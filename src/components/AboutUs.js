@@ -2,6 +2,9 @@ import React from "react";
 import home1 from "../img/home1.png";
 //import styled from "styled-components";
 import { About, Hide, Description, Image } from "../style.js";
+import { motion } from "framer-motion";
+import { titleAnime, fade, photoAnime } from "./PageAnimation";
+import Wave from "./Wave";
 
 function AboutUs() {
   return (
@@ -9,29 +12,30 @@ function AboutUs() {
       <Description>
         <div className="title">
           <Hide>
-            <h2>We work to make</h2>
+            <motion.h2 variants={titleAnime}>We work to make</motion.h2>
           </Hide>
           <Hide>
-            <h2>
-              {" "}
+            <motion.h2 variants={titleAnime}>
               your <span>dreams</span> come{" "}
-            </h2>
+            </motion.h2>
           </Hide>
           <Hide>
-            <h2>true.</h2>
+            <motion.h2 variants={titleAnime}>true.</motion.h2>
           </Hide>
         </div>
-        <p>
+        <motion.p variants={fade}>
           {" "}
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
           inventore aliquid,
-        </p>
-        <button>contact us</button>
+        </motion.p>
+        <motion.button variants={fade}>contact us</motion.button>
       </Description>
 
       <Image>
-        <img src={home1} alt="gaja r pic" />
+        <motion.img variants={photoAnime} src={home1} alt="gaja r pic" />
       </Image>
+
+      <Wave />
     </About>
   );
 }

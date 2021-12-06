@@ -6,6 +6,9 @@ import { useLocation } from "react-router-dom";
 
 import { MovieState } from "../MovieState";
 
+import { motion } from "framer-motion";
+import { pageAnimation } from "../components/PageAnimation";
+
 const MovieDetail = () => {
   const location = useLocation();
   const url = location.pathname;
@@ -21,18 +24,33 @@ const MovieDetail = () => {
   return (
     <>
       {movie && (
-        <Detail>
+        <Detail
+          exit="exit"
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+        >
           <Headline>
             <h2>{movie.title} </h2>
             <img src={movie.mainImg} alt="movie" />
           </Headline>
+
+          <Awards>
+            {movie.awards.map((award) => (
+              <Award
+                title={award.title}
+                description={award.description}
+                key={award.title}
+              />
+            ))}
+          </Awards>
         </Detail>
       )}
     </>
   );
 };
 
-const Detail = styled.div`
+const Detail = styled(motion.div)`
   color: white;
 `;
 
@@ -52,13 +70,45 @@ const Headline = styled.div`
     height: 90vh;
     object-fit: cover;
     /* overflow: hidden; */
-    transition: all 1s ease;
+    /* transition: all 1s ease; */
 
-    &:hover {
+    /* &:hover {
       transform: scale(1.2);
       overflow-x: hidden;
-    }
+    } */
   }
 `;
+
+const Awards = styled.div`
+  min-height: 80vh;
+  display: flex;
+  margin: 2rem 7rem;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const AwardStyle = styled.div`
+  padding: 3rem;
+  h3 {
+    font-size: 1.7rem;
+    font-weight: lighter;
+  }
+  .line {
+    width: 70%;
+    background-color: #23d997;
+    height: 0.5rem;
+    margin: 1rem 0rem;
+  }
+`;
+
+const Award = ({ title, description }) => {
+  return (
+    <AwardStyle>
+      <h3>{title}</h3>
+      <div className="line"></div>
+      <p>{description}</p>
+    </AwardStyle>
+  );
+};
 
 export default MovieDetail;
