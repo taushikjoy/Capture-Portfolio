@@ -16,7 +16,7 @@ function Nav() {
           <Link to="/work">2. Our Work</Link>
         </li>
         <li>
-          <Link to="/contrack">3. Contract Us</Link>
+          <Link to="/contract">3. Contract Us</Link>
         </li>
       </ul>
     </StyledNav>
@@ -24,7 +24,7 @@ function Nav() {
 }
 
 const StyledNav = styled.nav`
-  height: 10vh;
+  height: 10%;
   display: flex;
   justify-content: space-between;
   padding: 2rem 7rem;

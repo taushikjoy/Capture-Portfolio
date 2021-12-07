@@ -32,7 +32,7 @@ function AboutUs() {
       </Description>
 
       <Image>
-        <motion.img variants={photoAnime} src={home1} alt="gaja r pic" />
+        <motion.img variants={photoAnime} src={home1} alt="a photographer" />
       </Image>
 
       <Wave />

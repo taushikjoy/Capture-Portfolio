@@ -39,7 +39,7 @@ export const titleAnime = {
     // backgroundColor: ["hsl(55, 100%, 0%)", "hsl(55, 100%, 0%)"],
 
     transition: {
-      duration: 0.75,
+      duration: 0.25,
     },
     // backgroundColor: ["#555555"],
   },
@@ -52,7 +52,7 @@ export const fade = {
 
   show: {
     opacity: 1,
-    transition: { ease: "easeOut", duration: 1 },
+    transition: { ease: "easeIn", duration: 1 },
   },
 };
 
@@ -65,6 +65,30 @@ export const photoAnime = {
   show: {
     opacity: 1,
     scale: 1,
+    transition: { ease: "easeOut", duration: 0.75 },
+  },
+};
+
+export const lineAnime = {
+  hidden: {
+    width: "0%",
+  },
+
+  show: {
+    width: "100%",
+    transition: { duration: 1 },
+  },
+};
+
+export const slider = {
+  hidden: {
+    x: "-130%",
+    skew: "45deg",
+  },
+
+  show: {
+    x: "100%",
+    skew: "0deg",
     transition: { ease: "easeOut", duration: 1 },
   },
 };

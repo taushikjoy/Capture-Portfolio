@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { About } from "../style";
+import Toggle from "./Toggle";
 
 function FaqSection() {
   return (
@@ -9,8 +10,7 @@ function FaqSection() {
         ANY QUESTION <span> FAQ</span>{" "}
       </h2>
 
-      <div className="question">
-        <h4>How do I Start ?</h4>
+      <Toggle title="How do I Start ?">
         <div className="answer">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
@@ -19,22 +19,18 @@ function FaqSection() {
             esse sapiente voluptas!
           </p>
         </div>
-        <div className="faq-line"></div>
-      </div>
+      </Toggle>
 
-      <div className="question">
-        <h4>How do I Start ?</h4>
+      <Toggle title="1234?">
         <div className="answer">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
             dolores sed
           </p>
         </div>
-        <div className="faq-line"></div>
-      </div>
+      </Toggle>
 
-      <div className="question">
-        <h4>How do I Start ?</h4>
+      <Toggle title="abcdt ?">
         <div className="answer">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
@@ -42,19 +38,7 @@ function FaqSection() {
             recusandae quod et temporibus corporis adipisci animi placeat,
           </p>
         </div>
-        <div className="faq-line"></div>
-      </div>
-
-      <div className="question">
-        <h4>How do I Start ?</h4>
-        <div className="answer">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-            dolores sed,
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
+      </Toggle>
     </Faq>
   );
 }
